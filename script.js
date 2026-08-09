@@ -482,3 +482,80 @@ document.querySelectorAll('.project-card-full, .j-card, .hc-badge').forEach(card
   });
 });
 
+/* ================= 13. DYNAMIC GITHUB REPOSITORIES FETCHER ENGINE ================= */
+(async function initDynamicGitHubProjects() {
+  const container = document.querySelector('.projects-container');
+  const countBtn = document.querySelector('.filter-btn[data-filter="all"]');
+
+  if (!container) return;
+
+  try {
+    const response = await fetch('https://api.github.com/users/Mukil630/repos?sort=updated&per_page=100');
+    if (!response.ok) return;
+    const repos = await response.json();
+
+    // Filter out user profile repository
+    const publicRepos = repos.filter(r => r.name !== 'Mukil630' && !r.name.includes('.github'));
+
+    if (countBtn) {
+      countBtn.textContent = `All Builds (${publicRepos.length})`;
+    }
+
+    const previewMap = {
+      'Zora': 'agentic_ai_preview.jpg',
+      'Botify': 'botify_preview.jpg',
+      'Gmail_Automation_Bot': 'ai_billing_bot_preview.jpg',
+      'DREAM_ELEVATES': 'dreamelevate_preview.jpg',
+      'saivi-collection': 'saivi_preview.jpg',
+      'sgc-billing': 'sgc_billing_preview.jpg',
+      'MAPLA_AI': 'mapla_ai_preview.jpg',
+      'java-dsa': 'assets/visual-1.svg',
+      'AI-Support-Ticket-Analyzer': 'agentic_ai_preview.jpg',
+      'vizro-ai-lead-agent': 'agentic_ai_preview.jpg',
+      'smart-parking-application': 'assets/visual-4.svg',
+      'NAMMA-PARKING-MOBILE-APP': 'assets/visual-3.svg'
+    };
+
+    const existingCards = new Set();
+    document.querySelectorAll('.project-snap h3').forEach(h => {
+      existingCards.add(h.textContent.trim().toLowerCase().replace(/[^a-z0-9]/g, ''));
+    });
+
+    repos.forEach(repo => {
+      if (repo.name === 'Mukil630') return;
+
+      const normName = repo.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (existingCards.has(normName)) return;
+
+      const snapDiv = document.createElement('div');
+      snapDiv.className = 'project-snap dynamic-repo';
+
+      const previewImg = previewMap[repo.name] || 'assets/visual-2.svg';
+      const techTag = repo.language ? `${repo.language} · ⭐ ${repo.stargazers_count || 0}` : 'GitHub Repository';
+      const repoDesc = repo.description || 'Public GitHub repository engineered by Mukilarasu S.';
+      const liveLink = repo.homepage || repo.html_url;
+
+      snapDiv.innerHTML = `
+        <a class="project-card-full" href="${liveLink}" target="_blank" rel="noopener">
+          <div class="project-visual-full">
+            <img src="${previewImg}" alt="${repo.name}" style="width:100%; height:100%; object-fit: cover;" />
+          </div>
+          <div class="project-info-full">
+            <span class="project-tags mono">${techTag}</span>
+            <h3>${repo.name}</h3>
+            <p>${repoDesc}</p>
+            <span class="project-link mono">Open Repo / Live ↗</span>
+          </div>
+        </a>
+      `;
+
+      container.appendChild(snapDiv);
+    });
+
+    ScrollTrigger.refresh();
+  } catch (err) {
+    console.warn('Dynamic GitHub fetch engine notice:', err);
+  }
+})();
+
+
