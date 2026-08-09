@@ -1,0 +1,57 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#grad4)"/>
+  
+  <!-- Header -->
+  <text x="30" y="50" font-size="32" font-weight="bold" fill="#333">🛒</text>
+  <text x="80" y="50" font-size="28" font-weight="bold" fill="#333">E-commerce</text>
+  <text x="30" y="80" font-size="14" fill="#666">Product Catalog</text>
+  
+  <!-- Phone mockup outline -->
+  <rect x="180" y="110" width="240" height="260" fill="rgba(0,0,0,0.1)" rx="20" stroke="#333" stroke-width="2"/>
+  <rect x="190" y="125" width="220" height="225" fill="white" rx="16"/>
+  
+  <!-- Phone header -->
+  <rect x="190" y="125" width="220" height="35" fill="#333" rx="16 16 0 0"/>
+  <text x="300" y="148" font-size="12" font-weight="bold" fill="white" text-anchor="middle">ClawWear</text>
+  
+  <!-- Phone content - product -->
+  <rect x="200" y="165" width="200" height="120" fill="#f0f0f0" rx="8"/>
+  <circle cx="300" cy="205" r="35" fill="#FFD400"/>
+  <text x="300" y="210" font-size="20" text-anchor="middle" fill="#333">👟</text>
+  
+  <text x="200" y="300" font-size="11" font-weight="bold" fill="#333">Stylish Sneakers</text>
+  <text x="200" y="315" font-size="10" fill="#666">₹2,999</text>
+  
+  <!-- Stats -->
+  <rect x="50" y="200" width="90" height="70" fill="rgba(0,0,0,0.05)" rx="8"/>
+  <text x="95" y="220" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">500+</text>
+  <text x="95" y="235" font-size="10" fill="#666" text-anchor="middle">Products</text>
+  
+  <rect x="460" y="200" width="90" height="70" fill="rgba(0,0,0,0.05)" rx="8"/>
+  <text x="505" y="220" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">1K+</text>
+  <text x="505" y="235" font-size="10" fill="#666" text-anchor="middle">Customers</text>
+  
+  <!-- Shopping bag -->
+  <rect x="85" y="320" width="50" height="50" fill="#FFD400" rx="4" opacity="0.8"/>
+  <text x="110" y="350" font-size="24" text-anchor="middle" fill="#333">🛍️</text>
+  
+  <!-- Cart icon -->
+  <rect x="465" y="320" width="50" height="50" fill="#FFD400" rx="4" opacity="0.8"/>
+  <text x="490" y="350" font-size="24" text-anchor="middle" fill="#333">🛒</text>
+  
+  <!-- Discount tag -->
+  <rect x="150" y="290" width="50" height="40" fill="#333" rx="6"/>
+  <text x="175" y="310" font-size="14" font-weight="bold" fill="#FFD400" text-anchor="middle">20%</text>
+  <text x="175" y="325" font-size="9" fill="#FFD400" text-anchor="middle">OFF</text>
+  
+  <!-- Footer -->
+  <text x="30" y="380" font-size="12" fill="rgba(0,0,0,0.6)">HTML • CSS • JavaScript • Payment Gateway</text>
+</svg>

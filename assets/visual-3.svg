@@ -1,0 +1,68 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#grad3)"/>
+  
+  <!-- Header -->
+  <text x="30" y="50" font-size="32" font-weight="bold" fill="white">👥</text>
+  <text x="80" y="50" font-size="28" font-weight="bold" fill="white">Volunteer</text>
+  <text x="30" y="80" font-size="14" fill="rgba(255,255,255,0.9)">Task Allocation</text>
+  
+  <!-- Dashboard panel -->
+  <rect x="30" y="110" width="240" height="240" fill="rgba(255,255,255,0.15)" rx="12"/>
+  
+  <!-- Dashboard header -->
+  <text x="45" y="135" font-size="14" font-weight="bold" fill="white">Dashboard</text>
+  
+  <!-- Dashboard stats -->
+  <rect x="45" y="155" width="55" height="45" fill="rgba(255,255,255,0.1)" rx="6"/>
+  <text x="72.5" y="172" font-size="16" font-weight="bold" fill="white" text-anchor="middle">256</text>
+  <text x="72.5" y="190" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle">Volunteers</text>
+  
+  <rect x="120" y="155" width="55" height="45" fill="rgba(255,255,255,0.1)" rx="6"/>
+  <text x="147.5" y="172" font-size="16" font-weight="bold" fill="white" text-anchor="middle">18</text>
+  <text x="147.5" y="190" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle">Events</text>
+  
+  <rect x="195" y="155" width="55" height="45" fill="rgba(255,255,255,0.1)" rx="6"/>
+  <text x="222.5" y="172" font-size="16" font-weight="bold" fill="white" text-anchor="middle">42</text>
+  <text x="222.5" y="190" font-size="9" fill="rgba(255,255,255,0.9)" text-anchor="middle">Tasks</text>
+  
+  <!-- Allocation chart -->
+  <circle cx="120" cy="270" r="30" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="6"/>
+  <circle cx="120" cy="270" r="30" fill="none" stroke="white" stroke-width="6" stroke-dasharray="75.4 113.1" transform="rotate(-90 120 270)"/>
+  <text x="120" y="278" font-size="16" font-weight="bold" fill="white" text-anchor="middle">60%</text>
+  
+  <text x="175" y="255" font-size="10" fill="rgba(255,255,255,0.9)">✓ Allocated</text>
+  <text x="175" y="270" font-size="10" fill="rgba(255,255,255,0.9)">◆ In Progress</text>
+  <text x="175" y="285" font-size="10" fill="rgba(255,255,255,0.9)">◆ Pending</text>
+  
+  <!-- Features on right -->
+  <rect x="310" y="140" width="120" height="70" fill="rgba(255,255,255,0.15)" rx="8"/>
+  <text x="320" y="160" font-size="12" font-weight="bold" fill="white">👨‍💼 Management</text>
+  <text x="320" y="180" font-size="9" fill="rgba(255,255,255,0.9)">Track volunteers</text>
+  <text x="320" y="195" font-size="9" fill="rgba(255,255,255,0.9)">and skills</text>
+  
+  <rect x="310" y="230" width="120" height="70" fill="rgba(255,255,255,0.15)" rx="8"/>
+  <text x="320" y="250" font-size="12" font-weight="bold" fill="white">📊 Analytics</text>
+  <text x="320" y="270" font-size="9" fill="rgba(255,255,255,0.9)">Real-time impact</text>
+  <text x="320" y="285" font-size="9" fill="rgba(255,255,255,0.9)">and reports</text>
+  
+  <!-- Stats at bottom -->
+  <text x="50" y="360" font-size="12" font-weight="bold" fill="white">500+</text>
+  <text x="50" y="375" font-size="10" fill="rgba(255,255,255,0.9)">Active</text>
+  
+  <text x="140" y="360" font-size="12" font-weight="bold" fill="white">25+</text>
+  <text x="140" y="375" font-size="10" fill="rgba(255,255,255,0.9)">Events</text>
+  
+  <text x="230" y="360" font-size="12" font-weight="bold" fill="white">95%</text>
+  <text x="230" y="375" font-size="10" fill="rgba(255,255,255,0.9)">Success</text>
+  
+  <!-- Footer -->
+  <text x="310" y="380" font-size="12" fill="rgba(255,255,255,0.8)">JavaScript • Rule Engine</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F1E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8E0D0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#grad1)"/>
+  
+  <!-- Header -->
+  <text x="30" y="50" font-size="28" font-weight="bold" fill="#000">VSB-APEX</text>
+  <text x="30" y="75" font-size="18" font-weight="bold" fill="#FFD400">Placement Portal</text>
+  <text x="30" y="95" font-size="12" fill="#666">Career Guidance Platform</text>
+  
+  <!-- Main content area -->
+  <rect x="30" y="115" width="540" height="220" fill="rgba(255,212,0,0.08)" rx="12" stroke="#FFD400" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Building/Portal icon -->
+  <rect x="80" y="155" width="80" height="80" fill="#FFD400" rx="8" opacity="0.3"/>
+  <text x="120" y="205" font-size="48" text-anchor="middle" fill="#FFD400">🏛️</text>
+  
+  <!-- Features list -->
+  <text x="200" y="145" font-size="13" font-weight="bold" fill="#000">Key Features:</text>
+  
+  <circle cx="205" cy="170" r="3" fill="#FFD400"/>
+  <text x="220" y="175" font-size="11" fill="#333">Placement Automation</text>
+  
+  <circle cx="205" cy="195" r="3" fill="#FFD400"/>
+  <text x="220" y="200" font-size="11" fill="#333">Career Guidance</text>
+  
+  <circle cx="205" cy="220" r="3" fill="#FFD400"/>
+  <text x="220" y="225" font-size="11" fill="#333">Company Connect</text>
+  
+  <circle cx="205" cy="245" r="3" fill="#FFD400"/>
+  <text x="220" y="250" font-size="11" fill="#333">Resume Builder</text>
+  
+  <!-- Stats on right -->
+  <rect x="420" y="145" width="100" height="50" fill="rgba(255,212,0,0.15)" rx="6"/>
+  <text x="470" y="165" font-size="16" font-weight="bold" fill="#000" text-anchor="middle">5000+</text>
+  <text x="470" y="185" font-size="10" fill="#666" text-anchor="middle">Students</text>
+  
+  <rect x="420" y="210" width="100" height="50" fill="rgba(255,212,0,0.15)" rx="6"/>
+  <text x="470" y="230" font-size="16" font-weight="bold" fill="#000" text-anchor="middle">95%</text>
+  <text x="470" y="250" font-size="10" fill="#666" text-anchor="middle">Placement Rate</text>
+  
+  <!-- Footer stats -->
+  <text x="50" y="360" font-size="11" font-weight="bold" fill="#000">200+ Recruiters</text>
+  <text x="200" y="360" font-size="11" font-weight="bold" fill="#000">150+ Drives</text>
+  <text x="350" y="360" font-size="11" font-weight="bold" fill="#000">24/7 Support</text>
+  
+  <!-- Tech stack -->
+  <text x="30" y="385" font-size="10" fill="#999">React • FastAPI • PostgreSQL</text>
+</svg>
