@@ -388,6 +388,7 @@ window.addEventListener('load', () => {
   }
 
   const botResponses = [
+    { keywords: ['mapla', 'maplaa', 'voice agent', 'speech'], reply: '⚡ <b>MAPLA AI Engine:</b> Bilingual Agentic Voice Assistant (English & Tamil ta-IN) built with React, Web Speech API, Express & local OS automation tools!' },
     { keywords: ['botify', 'saas', 'whatsapp'], reply: '🚀 <b>Botify WhatsApp SaaS:</b> Multi-tenant SaaS platform built with React, FastAPI, PostgreSQL & Groq LLM on Railway. Features AI chat automation and automated appointment booking.' },
     { keywords: ['sgc', 'billing', 'desktop', 'electron'], reply: '💻 <b>SGC Billing Desktop App:</b> Built with Electron, React, Puppeteer for PDF generation, and OAuth Google Drive cloud sync.' },
     { keywords: ['jarvis', 'voice', 'python', 'assistant', 'agent'], reply: '🎙️ <b>Personal AI Assistant (Jarvis):</b> Voice-controlled Python desktop agent with speech recognition, ReAct cognitive reasoning loop, and web search telemetry.' },
