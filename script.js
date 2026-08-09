@@ -314,3 +314,170 @@ if (scrollCueBtn) {
     window.scrollBy({ top: window.innerHeight * 0.5, behavior: 'smooth' });
   });
 }
+
+/* Ensure GSAP ScrollTrigger recalculates after images load */
+window.addEventListener('load', () => {
+  ScrollTrigger.refresh();
+});
+
+/* ================= 9. Mouse Spotlight Following Effect ================= */
+(function mouseSpotlight() {
+  const spotlight = document.createElement('div');
+  spotlight.className = 'mouse-spotlight';
+  document.body.appendChild(spotlight);
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let currentX = mouseX;
+  let currentY = mouseY;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animateSpotlight() {
+    currentX += (mouseX - currentX) * 0.1;
+    currentY += (mouseY - currentY) * 0.1;
+    spotlight.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+    requestAnimationFrame(animateSpotlight);
+  }
+  animateSpotlight();
+})();
+
+/* ================= 10. Floating AI Assistant Chat Modal ================= */
+(function aiChatAssistant() {
+  const launcher = document.getElementById('aiLauncher');
+  const modal = document.getElementById('aiChatModal');
+  const closeBtn = document.getElementById('aiChatClose');
+  const input = document.getElementById('aiChatInput');
+  const sendBtn = document.getElementById('aiChatSend');
+  const stream = document.getElementById('aiChatStream');
+  const quickPills = document.querySelectorAll('.ai-quick-pills button');
+
+  if (!launcher || !modal) return;
+
+  launcher.addEventListener('click', () => {
+    modal.classList.toggle('open');
+    if (modal.classList.contains('open') && input) {
+      input.focus();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+  }
+
+  function addMessage(text, sender = 'bot') {
+    if (!stream) return;
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `chat-msg ${sender}`;
+
+    const avatar = document.createElement('div');
+    avatar.className = 'chat-avatar';
+    avatar.innerHTML = sender === 'bot' ? '⚡' : '👤';
+
+    const bubble = document.createElement('div');
+    bubble.className = 'chat-bubble';
+    bubble.innerHTML = text;
+
+    msgDiv.appendChild(avatar);
+    msgDiv.appendChild(bubble);
+    stream.appendChild(msgDiv);
+    stream.scrollTop = stream.scrollHeight;
+  }
+
+  const botResponses = [
+    { keywords: ['botify', 'saas', 'whatsapp'], reply: '🚀 <b>Botify WhatsApp SaaS:</b> Multi-tenant SaaS platform built with React, FastAPI, PostgreSQL & Groq LLM on Railway. Features AI chat automation and automated appointment booking.' },
+    { keywords: ['sgc', 'billing', 'desktop', 'electron'], reply: '💻 <b>SGC Billing Desktop App:</b> Built with Electron, React, Puppeteer for PDF generation, and OAuth Google Drive cloud sync.' },
+    { keywords: ['jarvis', 'voice', 'python', 'assistant', 'agent'], reply: '🎙️ <b>Personal AI Assistant (Jarvis):</b> Voice-controlled Python desktop agent with speech recognition, ReAct cognitive reasoning loop, and web search telemetry.' },
+    { keywords: ['internship', 'hero', 'ibm', 'experience'], reply: '🏢 <b>Internships:</b><br>1. <b>Hero MotoCorp Ltd.</b> — Automotive R&D Division (1 Month)<br>2. <b>IBM</b> — AI & Automation Virtual Program (2026)' },
+    { keywords: ['certif', 'infosys', 'nptel', 'java'], reply: '📜 <b>Certifications:</b><br>1. <b>Infosys Certified Java Programmer</b> (2024)<br>2. <b>NPTEL Demystifying Networking</b> (IIT, 2025)<br>3. <b>Udemy AI & ML Made Easy</b> (2025)<br>4. <b>Simplilearn AI Agents</b> (2026)' },
+    { keywords: ['education', 'college', 'vsb', 'cgpa', 'marks'], reply: '🎓 <b>Education:</b> B.Tech IT at VSB Engineering College, Karur (2023–2027) with <b>7.9 / 10 CGPA</b> (HSC XII: 69.33%).' },
+    { keywords: ['contact', 'email', 'phone', 'github', 'linkedin'], reply: '📬 <b>Contact Info:</b><br>• Email: mukilarasu55@gmail.com<br>• Phone: +91 90800 30538<br>• GitHub: github.com/Mukil630<br>• LinkedIn: linkedin.com/in/mukilarasu-s-333771302' },
+    { keywords: ['resume', 'cv', 'pdf'], reply: '📄 You can download Mukilarasu\'s official PDF resume directly from the Hero section or <a href="MUKILARASU_S_PERFECT_RESUME.pdf" download style="color:#FFD400;font-weight:bold;">Click Here to Download PDF →</a>' }
+  ];
+
+  function handleUserSend(userQuery) {
+    const text = userQuery || (input ? input.value.trim() : '');
+    if (!text) return;
+    addMessage(text, 'user');
+    if (input) input.value = '';
+
+    setTimeout(() => {
+      const lower = text.toLowerCase();
+      let matchedReply = '';
+      for (const item of botResponses) {
+        if (item.keywords.some(kw => lower.includes(kw))) {
+          matchedReply = item.reply;
+          break;
+        }
+      }
+      if (!matchedReply) {
+        matchedReply = `Mukil is a <b>Full-Stack Developer & AI Systems Engineer</b> (Infosys Java Certified, 7.9 CGPA). Ask about his <b>6+ live builds</b>, <b>internships</b>, or <b>certifications</b>!`;
+      }
+      addMessage(matchedReply, 'bot');
+    }, 450);
+  }
+
+  if (sendBtn) {
+    sendBtn.addEventListener('click', () => handleUserSend());
+  }
+
+  if (input) {
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') handleUserSend();
+    });
+  }
+
+  quickPills.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const q = btn.dataset.query;
+      if (q) handleUserSend(q);
+    });
+  });
+})();
+
+/* ================= 11. Project Category Filtering ================= */
+(function projectFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-snap');
+
+  if (!filterBtns.length || !projectCards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      projectCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (filter === 'all') {
+          card.style.display = 'block';
+        } else if (filter === 'ai' && (text.includes('ai') || text.includes('saas') || text.includes('bot') || text.includes('agent'))) {
+          card.style.display = 'block';
+        } else if (filter === 'fullstack' && (text.includes('billing') || text.includes('e-commerce') || text.includes('boutique') || text.includes('desktop'))) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      ScrollTrigger.refresh();
+    });
+  });
+})();
+
+/* ================= 12. 3D Tilt Effect on Cards ================= */
+document.querySelectorAll('.project-card-full, .j-card, .hc-badge').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    card.style.transform = `perspective(1000px) rotateX(${-y / 20}deg) rotateY(${x / 20}deg) scale(1.01)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+  });
+});
+

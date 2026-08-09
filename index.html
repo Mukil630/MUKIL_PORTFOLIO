@@ -54,7 +54,10 @@
     </div>
 
     <div class="hc-copy">
-      <p class="eyebrow mono">The AI & Full-Stack Developer. That's Mukilarasu S.</p>
+      <div class="live-status-pill mono">
+        <span class="status-dot"></span> Open for Full-Stack &amp; AI Engineering Roles
+      </div>
+      <p class="eyebrow mono">The AI &amp; Full-Stack Developer. That's Mukilarasu S.</p>
       <h1 class="hc-headline">Code,<br>Written to<br><em>Actually&nbsp;Scale.</em></h1>
     </div>
 
@@ -157,6 +160,12 @@
   <div class="section-head">
     <p class="eyebrow mono">03 / projects</p>
     <h2>Things I've shipped.</h2>
+  </div>
+
+  <div class="project-filters mono">
+    <button class="filter-btn active" data-filter="all">All Builds (7)</button>
+    <button class="filter-btn" data-filter="ai">AI Agents &amp; SaaS</button>
+    <button class="filter-btn" data-filter="fullstack">Desktop &amp; E-Commerce</button>
   </div>
 
   <div class="projects-pin">
@@ -339,6 +348,43 @@
     <footer class="footer mono">© 2026 Mukilarasu S — Full-Stack &amp; AI Systems Engineer.</footer>
   </div>
 </section>
+
+<!-- Floating AI Assistant Launcher -->
+<div class="ai-widget-launcher" id="aiLauncher" title="Chat with Mukil's Candidate AI">
+  <span class="ai-pulse"></span>
+  <span class="ai-icon">⚡</span>
+  <span class="ai-label mono">Ask Mukil's AI</span>
+</div>
+
+<!-- Floating AI Chat Modal -->
+<div class="ai-chat-modal" id="aiChatModal">
+  <div class="ai-chat-header">
+    <div class="ai-chat-title">
+      <span class="status-dot"></span>
+      <strong>Mukil's Candidate AI</strong>
+      <small class="mono">Powered by LLM</small>
+    </div>
+    <button class="ai-chat-close" id="aiChatClose">&times;</button>
+  </div>
+  <div class="ai-chat-stream" id="aiChatStream">
+    <div class="chat-msg bot">
+      <div class="chat-avatar">⚡</div>
+      <div class="chat-bubble">
+        Hi! I'm Mukilarasu's Candidate AI. Ask me about his <b>6+ live builds</b>, <b>Infosys Java certification</b>, <b>internships at Hero MotoCorp &amp; IBM</b>, or technical skills!
+      </div>
+    </div>
+  </div>
+  <div class="ai-quick-pills mono">
+    <button data-query="Tell me about Botify SaaS">🤖 Botify SaaS</button>
+    <button data-query="Show internships">🏢 Internships</button>
+    <button data-query="Show certifications">📜 Certifications</button>
+    <button data-query="How to contact Mukil?">📬 Contact Info</button>
+  </div>
+  <div class="ai-chat-input-row">
+    <input type="text" id="aiChatInput" placeholder="Ask about projects, skills, DSA..." class="mono" />
+    <button id="aiChatSend" class="btn-send">Send</button>
+  </div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
